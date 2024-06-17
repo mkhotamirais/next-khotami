@@ -1,4 +1,4 @@
-// import { Metadata } from "next";
+import { Metadata } from "next";
 
 type tR6Id = {
   params: { id: string };
