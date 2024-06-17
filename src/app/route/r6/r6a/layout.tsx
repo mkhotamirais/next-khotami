@@ -1,17 +1,21 @@
 import Link from "next/link";
 
-const r2Menus = [
-  { href: "/route/r2", label: "Nested Home" },
-  { href: "/route/r2/n1", label: "Nested1" },
-  { href: "/route/r2/n2", label: "Nested2" },
-];
+export const metadata = {
+  title: "r6a",
+};
+
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const menus = [
+    { href: "/route/r6/r6a", label: "r6a home" },
+    { href: "/route/r6/r6a/1", label: "r6a 1" },
+    { href: "/route/r6/r6a/2", label: "r6a 2" },
+  ];
   return (
     <div>
-      R2Layout
-      <div className="flex gap-4">
-        R2NAV:
-        {r2Menus.map((item) => (
+      R6aLayout
+      <div className="flex gap-3">
+        R6aNav:
+        {menus.map((item) => (
           <Link key={item.href} href={item.href} className="hover:text-cyan-500">
             {item.label}
           </Link>

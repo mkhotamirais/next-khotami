@@ -2,16 +2,23 @@
 
 import { useBasic } from "@/store/basic";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import { AsideCollapse, AsideMain } from "./aside";
 
 export default function Main({ children }: { children: React.ReactNode }) {
-  const { openAside, removeOpenNav, removeOpenAside } = useBasic();
+  const { openNav, openAside, removeOpenNav, removeOpenAside } = useBasic();
   const pathname = usePathname();
   const handleClick = () => {
     removeOpenNav();
     if (openAside) removeOpenAside();
   };
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (openNav) removeOpenNav();
+      if (openAside) removeOpenAside();
+    });
+  }, [openNav, openAside, removeOpenAside, removeOpenNav]);
+
   let content;
   if (pathname === "/")
     content = (

@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Route Home</div>;
+  return <div>R4: Catch all route</div>;
 }
