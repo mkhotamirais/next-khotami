@@ -32,7 +32,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
         <main className="px-3 lg:px-12 flex-grow grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5" onClick={handleClick}>
           <AsideCollapse />
           <AsideMain />
-          <div className="sm:col-span-3 lg:col-span-1">{children}</div>
+          <div className="sm:col-span-3 lg:col-span-4 border">{children}</div>
         </main>
       </>
     );

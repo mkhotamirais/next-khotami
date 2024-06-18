@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       R2Layout
-      <div className="flex gap-4">
+      <div className="flex gap-4 flex-wrap">
         R2NAV:
         {r2Menus.map((item) => (
           <Link key={item.href} href={item.href} className="hover:text-cyan-500 min-w-max">

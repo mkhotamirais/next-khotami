@@ -1,6 +1,7 @@
 export default function Home() {
   return (
     <div>
+      <p>special files: page.tsx; layout.tsx; template.tsx; not-found.tsx; loading.tsx; error.tsx;</p>
       <p>
         FROM CODEVOLUTION <br /> nextjs is a react fw for building web app. <br />
         react is not feasible to create fully-featured app ready for production. <br />
@@ -83,6 +84,31 @@ export default function Home() {
         certain parts of the application. such as a navigation menu or sidebar. even if the main content is still being
         fetched.
       </p>
+      <p>
+        <b>error.tsx</b> automatically wrap a segment and its nested children in a react error boundary; create error ui
+        tailored to specific segment using the file system hirarcy to adjust granualarity; isolate errors to affects segments
+        while keeping the rest of the application functional; add functionality to attempt to recover from an error without a
+        full page reload. <br />
+        <b>nested error</b>: errors bubble up to the closest parent error boundary, an error.tsx file will create to errors
+        for all its nested child segments. by positioning error.tsx files a different levels in the nested folders of a
+        route. you can achieve a more granual level of error handling. berikut hirarkinya: <br />
+        <b>handling error in layout</b>: an error.tsx file will handle error for all its nested file segments. the error
+        boundary doesnt catch errors through here because its nested inside the layouts component.
+      </p>
+      <pre className="text-xs">{`
+COMPONENT HIRARCY
+<Layout>
+  <Template>
+    <ErrorBoundary fallback={<Error />}>
+      <Suspense fallback={Loading />}>
+        <ErrorBoundary fallback={<NotFound />}>
+          <Page />
+        </ErrorBoundary>
+      </Suspense>
+    </ErrorBoundary>
+  </Template>
+</Layout>
+`}</pre>
     </div>
   );
 }

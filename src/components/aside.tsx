@@ -29,6 +29,7 @@ const routeMenus = [
   { href: "/route/r6", label: "r6: metadata" },
   { href: "/route/r7", label: "r7: redirect" },
   { href: "/route/r8", label: "r8: template.tsx" },
+  { href: "/route/r9", label: "r9: error.tsx" },
 ];
 
 export function AsideBtn() {
